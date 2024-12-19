@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .filter select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .exercises {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .exercise-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .exercise-card p {
+            margin: 10px 0;
+        }
+
+        .exercise-card .difficulty {
+            font-weight: bold;
+        }
+
+        .exercise-card .status {
+            font-style: italic;
+            color: #007BFF;
+        }
+
+        .exercise-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .exercise-card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Exercises</h1>
+        
+        <!-- Filter by programming language -->
+        <div class="filter">
+            <label for="languageFilter">Filter by language:</label>
+            <select id="languageFilter">
+                <option value="all">All Languages</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+        </div>
+
+        <!-- Exercises Grid -->
+        <div class="exercises" id="exerciseList">
+            <!-- Exercise 1 -->
+            <div class="exercise-card" data-language="python">
+                <h3>Python Basics</h3>
+                <p>Learn the basics of Python, including syntax, loops, and conditions.</p>
+                <p class="difficulty">Difficulty: Easy</p>
+                <p class="status">Status: Not Started</p>
+                <button>Select Exercise</button>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div class="exercise-card" data-language="c">
+                <h3>C Arrays</h3>
+                <p>Work with arrays and pointers in C programming language.</p>
+                <p class="difficulty">Difficulty: Medium</p>
+                <p class="status">Status: In Progress</p>
+                <button>Select Exercise</button>
+            </div>
+
+            <!-- Exercise 3 -->
+            <div class="exercise-card" data-language="java">
+                <h3>Java OOP</h3>
+                <p>Understand Object-Oriented Programming (OOP) in Java.</p>
+                <p class="difficulty">Difficulty: Hard</p>
+                <p class="status">Status: Completed</p>
+                <button>Select Exercise</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const languageFilter = document.getElementById('languageFilter');
+        const exerciseList = document.getElementById('exerciseList');
+        const exercises = exerciseList.getElementsByClassName('exercise-card');
+
+        // Filter exercises by language
+        languageFilter.addEventListener('change', function() {
+            const selectedLanguage = languageFilter.value;
+
+            for (let i = 0; i < exercises.length; i++) {
+                const exercise = exercises[i];
+                const exerciseLanguage = exercise.getAttribute('data-language');
+
+                // Show or hide based on the selected language
+                if (selectedLanguage === 'all' || exerciseLanguage === selectedLanguage) {
+                    exercise.style.display = 'block';  // Change from '' to 'block'
+                } else {
+                    exercise.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #115D33; /* Dartmouth green */
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #228B22; /* Forest green */
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #4CBB17; /* Kelly green */
+}
+
+header {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #70C247; /* Mantis */
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+header p span {
+    color: #70C247; /* Mantis */
+}
+
+.social-links {
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+button.hire-me {
+    background-color: #8DD06C; /* Pistachio */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.hire-me:hover {
+    background-color: #4CBB17; /* Kelly green */
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - Nguyen Tran Nhat Quan</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #115D33; /* Dartmouth green */
+    color: #fff;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        background-color: #228B22; /* Forest green */
+        padding: 1rem;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+        background-color: #4CBB17; /* Kelly green */
+    }
+
+    section {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .lab-buttons {
+        margin: 1rem 0;
+    }
+
+    .lab-buttons button {
+        background-color: #8DD06C; /* Pistachio */
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        margin: 0.5rem;
+        transition: background-color 0.3s;
+    }
+
+    .lab-buttons button:hover {
+        background-color: #4CBB17; /* Kelly green */
+    }
+
+    #lab-content {
+        margin-top: 2rem;
+    }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab.html" class="active">Lab</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Lab</h1>
+        <div class="lab-buttons">
+            <button onclick="window.location.href='lab1.html'">Lab 1</button>
+            <button onclick="window.location.href='weblogin.html'">Lab 2</button>
+            <button onclick="window.location.href='lab3.html'">Lab 3</button>
+            <button onclick="window.location.href='lab4.html'">Lab 4</button>
+            <button onclick="window.location.href='lab5.html'">Lab 5</button>
+            <button onclick="window.location.href='lab6.html'">Lab 6</button>
+        </div>
+        <div id="lab-content">
+            <p>Chọn một Lab để xem bài tập.</p>
+        </div>
+    </section>
+    <script>
+        function showLabContent(labId) {
+            const labContent = {
+                lab1: 'Nội dung bài tập của Lab 1.',
+                lab2: 'Nội dung bài tập của Lab 2.',
+                lab3: 'Nội dung bài tập của Lab 3.',
+                lab4: 'Nội dung bài tập của Lab 4.',
+                lab5: 'Nội dung bài tập của Lab 5.',
+                lab6: 'Nội dung bài tập của Lab 6.'
+            };
+
+            document.getElementById('lab-content').innerHTML = '<p>' + labContent[labId] + '</p>';
+        }
+    </script>
+</body>
+</html>
